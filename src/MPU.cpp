@@ -2411,9 +2411,9 @@ esp_err_t MPU::getBiases(accel_fs_t accelFS, gyro_fs_t gyroFS, raw_axes_t* accel
     gyroAvg.x /= packetCount;
     gyroAvg.y /= packetCount;
     gyroAvg.z /= packetCount;
-    // remove gravity from Accel Z axis
+    // remove gravity from Accel Y axis
     const uint16_t gravityLSB = INT16_MAX >> (accelFS + 1);
-    accelAvg.z -= gravityLSB;
+    accelAvg.y += gravityLSB;
     // save biases
     for (int i = 0; i < 3; i++) {
         (*accelBias)[i] = (int16_t) accelAvg[i];
