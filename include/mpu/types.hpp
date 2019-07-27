@@ -15,6 +15,7 @@
 #include <stdint.h>
 #include "mpu/registers.hpp"
 #include "sdkconfig.h"
+#include "I2Cbus.hpp"
 
 /*! MPU Driver namespace */
 namespace mpud
